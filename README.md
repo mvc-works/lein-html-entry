@@ -5,9 +5,9 @@ A Leiningen plugin to generate `index.html` for loading scripts.
 
 ## Usage
 
-[![Clojars Project](http://clojars.org/mvc-works/html-entry/latest-version.svg)](http://clojars.org/mvc-works/html-entry)
+[![Clojars Project](http://clojars.org/mvc-works/lein-html-entry/latest-version.svg)](http://clojars.org/mvc-works/lein-html-entry)
 
-Put `[html-entry "0.1.0"]` into the `:plugins` vector of your `project.clj`.
+Put `[lein-html-entry "0.0.2"]` into the `:plugins` vector of your `project.clj`.
 
 Configure the plugin like this:
 
@@ -23,9 +23,7 @@ also create a Clojure file for `load-file` to call, for example:
 (require '[hiccup.core :refer [html]])
 
 (defn render [data] (html [:html data]))
-
-(defn id [x] x)
-(id render) ; return function `render`, plugin will use it
+; return function `render`, plugin will use it in `load-file`
 ```
 
 then generate `index.html` by running:
