@@ -12,7 +12,9 @@ Put `[html-entry "0.1.0"]` into the `:plugins` vector of your `project.clj`.
 Configure the plugin like this:
 
 ```clojure
-:html-entry {:file "src/html.clj" :output "target/public/index.html"}
+:html-entry {:file "src/html.clj"
+             :output "target/public/index.html"
+             :data {}} ; data will be passed to `render` function
 ```
 
 also create a Clojure file for `load-file` to call, for example:
@@ -23,7 +25,6 @@ also create a Clojure file for `load-file` to call, for example:
 (defn render [data] (html [:html data]))
 
 (defn id [x] x)
-
 (id render) ; return function `render`, plugin will use it
 ```
 
